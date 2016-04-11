@@ -29,8 +29,9 @@ M$activity <- sapply(M$activity, function(x) act_label$V2[x])
 M$subject <- rbind(sub_traindf, sub_testdf)$V1
 
 #Step 6: create a tidy data set with average of each variable for subject and activity
+library(reshape2)
 tmelt <- melt(M, id.vars=c("subject", "activity"), measure.vars=feat_df$V2)
 tcast <- dcast(tmelt, subject+activity~variable, mean)
-write.table(tcast, "tidy_data.txt")
+write.table(tcast, "tidy_data.txt", row.name=FALSE)
 
 
