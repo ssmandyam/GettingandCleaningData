@@ -20,7 +20,7 @@ The script, "run_analysis.R" performs the following:
 1. Merges the training and the test sets to create one data set.
     - reads the data sets listed above
     - binds train and test data sets 
-    - Assigns feature names (column) 
+    - Assigns feature names (column)but also fixes duplicate names in the originalso source with "_dupe<position>" appended where position is the row location in the original features.txt file 
 
 2. Uses the dplyr package to extract only the mean and standard deviation variables.
  
