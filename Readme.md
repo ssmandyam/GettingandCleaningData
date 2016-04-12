@@ -19,19 +19,18 @@ The following data sets were used from the original data source package to creat
 The script, "run_analysis.R" performs the following:
 1. Merges the training and the test sets to create one data set.
     - reads the data sets listed above
-    - binds train and test data sets and stores it in "M"
-    - Assigns feature names (column) to M but fixes duplicates by appending "_dupe<position>" to the name
+    - binds train and test data sets 
+    - Assigns feature names (column) 
 
-2. Extract only the measurements on the mean and standard deviation for each measurement.
-    - uses apply() function to calculate the mean and standard deviation on M and stores it in "measurement"
-
+2. Uses the dplyr package to extract only the mean and standard deviation variables.
+ 
 3. Use descriptive activity names to name the activities in the data set
-    - uses sapply() function on M to replace activity_label identifers with actual activity names
+    - uses sapply() function to replace activity_label identifers with actual activity names
 
 4. Appropriately label the data set with descriptive variable names.
-    - binds the subject identifier and activities to M
+    - binds the subject identifier and activities
 
 5. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
-    - uses melt() function to simplify M and stores in "tmelt"
-    - uses dcast() function to derive the mean value for each feature by subject and activity and stores in "tcast"
+    - uses melt() function to simplify the data set
+    - uses dcast() function to derive the mean value for each feature by subject and activity 
     - writes the tcast table to "tidy_data.txt" file
