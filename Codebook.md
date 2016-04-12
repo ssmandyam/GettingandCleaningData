@@ -17,7 +17,6 @@ The following data sets were used from the original data source package to creat
 - train/y_train.txt -> training labels
 - test/y_test.txt -> test labels
 - activity_labels.txt -> links the class labels (in y_training and y_test) with their activity names
-
 The tidy data set consists of the following IDs and variables.
 
 Identifiers 
@@ -34,56 +33,87 @@ range: "LAYING",  "SITTING",  "STANDING", "WALKING", "WALKING_DOWNSTAIRS", "WALK
 
 Variables
 
-There are 561 features which are described in the features.txt file contained in the original data source package. There are a combined 10299 observations of each feature across all subjects and activities in the original package. The tidy data set contains the mean value of these features. 
+There are 561 features which are described in the features.txt file contained in the original data source package. There are a combined 10299 observations of each feature across all subjects and activities in the original package. The tidy data set contains only the "mean()" and "std()" features. The value for each feature is the average for each activity and subject:. 
 
-The original feature list contained 84 duplicate feature names for variables. The duplicate names were deduped by appending "_dupe<position>" to the original feature name. The <position> value indicates the row # in the original feature.lxt file.
+The following are the 79 feature/variable names in the tidy data set
 
-The following are the de-duplicated names in the tidy data set
-fBodyAcc-bandsEnergy()-1,8_dupe317
-fBodyAcc-bandsEnergy()-9,16_dupe318
-fBodyAcc-bandsEnergy()-17,24_dupe319
-fBodyAcc-bandsEnergy()-25,32_dupe320
-fBodyAcc-bandsEnergy()-33,40_dupe321
-fBodyAcc-bandsEnergy()-41,48_dupe322
-fBodyAcc-bandsEnergy()-49,56_dupe323
-fBodyAcc-bandsEnergy()-57,64_dupe324
-fBodyAcc-bandsEnergy()-1,16_dupe325
-fBodyAcc-bandsEnergy()-17,32_dupe326
-fBodyAcc-bandsEnergy()-33,48_dupe327
-fBodyAcc-bandsEnergy()-49,64_dupe328
-fBodyAcc-bandsEnergy()-1,24_dupe329
-fBodyAcc-bandsEnergy()-25,48_dupe330
-fBodyAcc-bandsEnergy()-1,8_dupe331
-fBodyAcc-bandsEnergy()-9,16_dupe332
-fBodyAcc-bandsEnergy()-17,24_dupe333
-fBodyAcc-bandsEnergy()-25,32_dupe334
-fBodyAcc-bandsEnergy()-33,40_dupe335
-fBodyAcc-bandsEnergy()-41,48_dupe336
-fBodyAcc-bandsEnergy()-49,56_dupe337
-fBodyAcc-bandsEnergy()-57,64_dupe338
-fBodyAcc-bandsEnergy()-1,16_dupe339
-fBodyAcc-bandsEnergy()-17,32_dupe340
-fBodyAcc-bandsEnergy()-33,48_dupe341
-fBodyAcc-bandsEnergy()-49,64_dupe342
-fBodyAcc-bandsEnergy()-1,24_dupe343
-fBodyAcc-bandsEnergy()-25,48_dupe344
-fBodyAccJerk-bandsEnergy()-1,8_dupe396
-fBodyAccJerk-bandsEnergy()-9,16_dupe397
-fBodyAccJerk-bandsEnergy()-17,24_dupe398
-fBodyAccJerk-bandsEnergy()-25,32_dupe399
-fBodyAccJerk-bandsEnergy()-33,40_dupe400
-fBodyAccJerk-bandsEnergy()-41,48_dupe401
-fBodyAccJerk-bandsEnergy()-49,56_dupe402
-fBodyAccJerk-bandsEnergy()-57,64_dupe403
-fBodyAccJerk-bandsEnergy()-1,16_dupe404
-fBodyAccJerk-bandsEnergy()-17,32_dupe405
-fBodyAccJerk-bandsEnergy()-33,48_dupe406
-fBodyAccJerk-bandsEnergy()-49,64_dupe407
-fBodyAccJerk-bandsEnergy()-1,24_dupe408
-fBodyAccJerk-bandsEnergy()-25,48_dupe409
-fBodyAccJerk-bandsEnergy()-1,8_dupe410
-fBodyAccJerk-bandsEnergy()-9,16_dupe411
-fBodyAccJerk-bandsEnergy()-17,24_dupe412
-fBodyAccJerk-bandsEnergy()-25,32_dupe413
-fBodyAccJerk-bandsEnergy()-33,40_dupe414
+tBodyAcc-mean()-X
+tBodyAcc-mean()-Y
+tBodyAcc-mean()-Z
+tGravityAcc-mean()-X
+tGravityAcc-mean()-Y
+tGravityAcc-mean()-Z
+tBodyAccJerk-mean()-X
+tBodyAccJerk-mean()-Y
+tBodyAccJerk-mean()-Z
+tBodyGyro-mean()-X
+tBodyGyro-mean()-Y
+tBodyGyro-mean()-Z
+tBodyGyroJerk-mean()-X
+tBodyGyroJerk-mean()-Y
+tBodyGyroJerk-mean()-Z
+tBodyAccMag-mean()
+tGravityAccMag-mean()
+tBodyAccJerkMag-mean()
+tBodyGyroMag-mean()
+tBodyGyroJerkMag-mean()
+fBodyAcc-mean()-X
+fBodyAcc-mean()-Y
+fBodyAcc-mean()-Z
+fBodyAcc-meanFreq()-X
+fBodyAcc-meanFreq()-Y
+fBodyAcc-meanFreq()-Z
+fBodyAccJerk-mean()-X
+fBodyAccJerk-mean()-Y
+fBodyAccJerk-mean()-Z
+fBodyAccJerk-meanFreq()-X
+fBodyAccJerk-meanFreq()-Y
+fBodyAccJerk-meanFreq()-Z
+fBodyGyro-mean()-X
+fBodyGyro-mean()-Y
+fBodyGyro-mean()-Z
+fBodyGyro-meanFreq()-X
+fBodyGyro-meanFreq()-Y
+fBodyGyro-meanFreq()-Z
+fBodyAccMag-mean()
+fBodyAccMag-meanFreq()
+fBodyBodyAccJerkMag-mean()
+fBodyBodyAccJerkMag-meanFreq()
+fBodyBodyGyroMag-mean()
+fBodyBodyGyroMag-meanFreq()
+fBodyBodyGyroJerkMag-mean()
+fBodyBodyGyroJerkMag-meanFreq()
+tBodyAcc-std()-X
+tBodyAcc-std()-Y
+tBodyAcc-std()-Z
+tGravityAcc-std()-X
+tGravityAcc-std()-Y
+tGravityAcc-std()-Z
+tBodyAccJerk-std()-X
+tBodyAccJerk-std()-Y
+tBodyAccJerk-std()-Z
+tBodyGyro-std()-X
+tBodyGyro-std()-Y
+tBodyGyro-std()-Z
+tBodyGyroJerk-std()-X
+tBodyGyroJerk-std()-Y
+tBodyGyroJerk-std()-Z
+tBodyAccMag-std()
+tGravityAccMag-std()
+tBodyAccJerkMag-std()
+tBodyGyroMag-std()
+tBodyGyroJerkMag-std()
+fBodyAcc-std()-X
+fBodyAcc-std()-Y
+fBodyAcc-std()-Z
+fBodyAccJerk-std()-X
+fBodyAccJerk-std()-Y
+fBodyAccJerk-std()-Z
+fBodyGyro-std()-X
+fBodyGyro-std()-Y
+fBodyGyro-std()-Z
+fBodyAccMag-std()
+fBodyBodyAccJerkMag-std()
+fBodyBodyGyroMag-std()
+fBodyBodyGyroJerkMag-std()
 
